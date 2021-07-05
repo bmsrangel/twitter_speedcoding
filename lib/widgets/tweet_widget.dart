@@ -83,12 +83,13 @@ class TweetWidget extends StatelessWidget {
                     ? const SizedBox.shrink()
                     : Container(
                         margin: const EdgeInsets.only(top: 10.0),
-                        decoration: BoxDecoration(
+                        child: ClipRRect(
+                          clipBehavior: Clip.antiAlias,
                           borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Image.network(
-                          mediaUrl!,
-                          fit: BoxFit.cover,
+                          child: Image.network(
+                            mediaUrl!,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                 Row(
